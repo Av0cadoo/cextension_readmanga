@@ -37,11 +37,44 @@ function changemode(){
   }
 }
 var url = window.location.href;
-console.log(url);
-console.log(url.includes("oremanga"));
 
 if(url.includes("oremanga")){
   changemode();
-} else if(url.includes("niceoppai") && !url.includes("?all")){
-  window.location.href = url + "/?all"
+} else if(url.includes("niceoppai")){
+  if(!url.includes("?all")){
+    window.location.href = url + "/?all"
+  }
+  window.onkeydown = function(e){
+    e = e || window.event;
+
+    if (e.keyCode == '188') {
+        // <(,)
+        var splitedUrl = url.split("/");
+        splitedUrl[4] = splitedUrl[4]++ - 1;
+        var newUrl = splitedUrl.join("/")
+        window.location.href = newUrl
+    }
+    else if (e.keyCode == '190') {
+        // >(.)
+        var splitedUrl = url.split("/");
+        splitedUrl[4] = splitedUrl[4]++ + 1;
+        var newUrl = splitedUrl.join("/")
+        window.location.href = newUrl
+    }
+  }
+  window.onclick = function(e){
+    e = e || window.event;
+    if(e.screenX < window.screen.width / 3){
+      var splitedUrl = url.split("/");
+      splitedUrl[4] = splitedUrl[4]++ - 1;
+      var newUrl = splitedUrl.join("/")
+      window.location.href = newUrl
+    } else if(e.screenX > window.screen.width / 3){
+      var splitedUrl = url.split("/");
+      splitedUrl[4] = splitedUrl[4]++ + 1;
+      var newUrl = splitedUrl.join("/")
+      window.location.href = newUrl
+    }
+  }
+
 }
