@@ -16,7 +16,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://www.oremanga.com/*"],
+      "matches": ["http://www.oremanga.com/*", "http://www.niceoppai.net/*/*"],
       "js": ["jquery.min.js", "changemode.js"],
       "run_at": "document_end"
     }

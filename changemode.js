@@ -36,4 +36,12 @@ function changemode(){
     tb("#manga_alphabet img").css('max-width', '');
   }
 }
-changemode();
+var url = window.location.href;
+console.log(url);
+console.log(url.includes("oremanga"));
+
+if(url.includes("oremanga")){
+  changemode();
+} else if(url.includes("niceoppai") && !url.includes("?all")){
+  window.location.href = url + "/?all"
+}
