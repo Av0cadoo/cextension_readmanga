@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Change mode OREMANGA",
-  "description": "This extension is using for automatically change mode of view to \"all page\" in OREMANGA website",
+  "name": "Read manga_all page",
+  "description": "Chrome extension for automatically change mode of manga website to show all pages.",
   "version": "1.0",
 
   "browser_action": {
-    "default_title": "Change mode OREMANGA"
+    "default_title": "ReadManga"
   },
 
   "background":
